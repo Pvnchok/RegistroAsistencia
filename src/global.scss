@@ -35,3 +35,75 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+:root {
+  --ion-background-color: #FFFFFF; 
+  --ion-color-primary: #003DA5;  
+  --ion-color-primary-rgb: 0, 61, 165;
+  --ion-color-secondary: #F5A800;  
+  --ion-color-secondary-rgb: 245, 168, 0;
+  --ion-color-dark: #333333;  
+  --ion-color-light: #FFFFFF;  
+}
+
+.content-background {
+  --background: #FFFFFF; 
+}
+
+ion-item {
+  --background: #FFFFFF; 
+  --border-color: #C0C0C0; 
+  --border-width: 1px;
+  --border-radius: 8px;
+  margin-bottom: 10px; 
+}
+
+ion-label {
+  color: #003DA5; 
+}
+
+ion-input {
+  --background: #FFFFFF;
+  --color: #000000;
+  --placeholder-color: #A0A0A0; 
+  --highlight-color: #000000; 
+  color: #000000 !important; 
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.form-container {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.button-container {
+  text-align: center;
+}
+
+ion-button {
+  margin-bottom: 10px;
+}
+
+ion-button[fill="clear"] {
+  --color: #000;
+}
+
+  
+  
+  
+  
+  
