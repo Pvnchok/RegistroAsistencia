@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/user.service';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint } from '@capacitor/barcode-scanner';
 
 @Component({
@@ -10,27 +11,34 @@ import { CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint } from '@capac
 })
 export class HomePage implements OnInit {
   username: string = '';
-  result: string = ''
+  result: string = '';
 
   constructor(
     private userService: UserService,
     private router: Router,
-  ) { }
+    private navController: NavController
+  ) {}
 
   ngOnInit() {
-    this.username = this.userService.getUsername(); // Obtén el nombre del usuario
+    this.username = this.userService.getUsername(); 
   }
 
+  navigateTo(page: string) {
+    this.navController.navigateForward(`/${page}`);
+  }
 
   async qrcode() {
-    { this.router.navigate(['/login']); }
+    await this.router.navigate(['/login']); 
   }
 
-  async scan(): Promise<void> {
-    const result = await CapacitorBarcodeScanner.scanBarcode({
-      hint: CapacitorBarcodeScannerTypeHint.ALL
-    });
-    this.result = result.ScanResult;
-  }
-
+ 
 }
+
+
+
+
+
+
+
+  
+
