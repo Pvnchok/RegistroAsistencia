@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/user.service';
+import { UserService } from '../user.service'; // Asegúrate de que la ruta sea correcta
 import { Router } from '@angular/router';
-import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
+import { NavController } from '@ionic/angular';
+import { WeatherService } from '../tiempo/weather.service'; // Ruta corregida
+import { environment } from 'src/environments/environment'; // Asegúrate de que el entorno esté configurado
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -10,49 +13,55 @@ import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 })
 export class HomePage implements OnInit {
   username: string = '';
-  scannedData: any;
+  result: string = '';
+  weatherData: any;
 
   constructor(
+    public httpClient: HttpClient,
     private userService: UserService,
     private router: Router,
-  ) { }
+    private navController: NavController,
+    public weatherService: WeatherService // Asegúrate de que esto esté bien definido
+  ) {}
 
   ngOnInit() {
-    this.username = this.userService.getUsername(); // Obtén el nombre del usuario
+    this.username = this.userService.getUsername(); 
+    this.getUserLocation(); // Llama a esta función para obtener el clima al iniciar
   }
 
-
-  /*async qrcode() {
-    {this.router.navigate(['/login']);}
-  }*/
-
-async qrcode() {
-  try {
-    await this.startScan();
-  } catch (error) {
-    console.error('Error iniciando el escaneo de QR:', error);
+  getUserLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          this.getWeather(lat, lon);
+        },
+        (error) => {
+          console.error('Error obteniendo la ubicación', error);
+        }
+      );
+    } else {
+      console.error('Geolocalización no es soportada por este navegador.');
+    }
   }
-}
 
-  async startScan() {
-  // Solicitar permiso para usar la cámara
-  await BarcodeScanner.checkPermission({ force: true });
-
-  // Ocultar la UI de la aplicación mientras escaneas (opcional)
-  BarcodeScanner.hideBackground(); 
-
-  // Iniciar el escaneo del código QR
-  const result = await BarcodeScanner.startScan(); // Escanea el código QR
-
-  // Si el escaneo fue exitoso
-  if (result.hasContent) {
-    console.log('Código QR escaneado', result.content);
-    this.scannedData = result.content; // Guardar el contenido escaneado
+  getWeather(lat: number, lon: number) {
+    this.weatherService.getWeatherByCoords(lat, lon).subscribe({
+      next: (data: any) => {
+        this.weatherData = data;
+      },
+      error: (error: any) => {
+        console.error('Error obteniendo el clima', error);
+      }
+    });
   }
-}
 
-stopScan() {
-  // Detener el escaneo (por si lo necesitas)
-  BarcodeScanner.stopScan();
-}
+  navigateTo(page: string) {
+    this.navController.navigateForward(`/${page}`);
+  }
+
+  async qrcode() {
+    await this.router.navigate(['/login']); 
+  }
 }
