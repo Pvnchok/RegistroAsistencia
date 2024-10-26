@@ -1,29 +1,77 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Inicio</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Duoc UC</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item button shape="round" color="secondary" (click)="navigateTo('home')">
+        Home
+      </ion-item>
+      <ion-item button shape="round" color="secondary" (click)="navigateTo('login')">
+        Log In
+      </ion-item>
+      <ion-item button shape="round" color="secondary" (click)="navigateTo('reset-password')">
+        Reset Password
+      </ion-item>
+      <ion-item button shape="round" color="secondary" (click)="navigateTo('user')">
+        User 
+      </ion-item>
+    </ion-list>
+    <ion-item button shape="round" color="secondary" (click)="navigateTo('clases')">
+      Clases 
+    </ion-item>
+  </ion-content>
+</ion-menu>
 
-<ion-content class="content-background">
-  <div class="logo-container">
-    <img src="assets/img/Logo_Duoc.png" alt="Logo Duoc UC" class="logo">
-  </div>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu Principal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <hr>
 
-  <div class="form-container">
-    <ion-text>
-      <h1 style="color: #333333;">Bienvenido, {{ username }}</h1>
-    </ion-text>
+  <ion-content class="content-background">
+    <div class="logo-container">
+      <img src="assets/img/Logo_Duoc.png" alt="Logo Duoc UC" class="logo">
+    </div>
+
+    <div class="form-container">
+      <ion-text>
+        <h1 style="color: #333333;">Bienvenido, {{ username }} :)</h1>
+      </ion-text>
+    </div>
 
     <div class="button-container">
-      <ion-button expand="block" shape="round" color="secondary" (click)="qrcode()">
+      <ion-button shape="round" color="secondary" (click)="qrcode()">
         Registrar asistencia
       </ion-button>
     </div>
 
-    <!-- Mostrar el resultado del código QR escaneado -->
-    <div *ngIf="scannedData">
-      <h2>Resultado del escaneo:</h2>
-      <p>{{ scannedData }}</p>
+    <ion-list>
+      <ion-item *ngIf="result">
+        {{ result }}
+      </ion-item>
+    </ion-list>
+
+    <div class="weather-container" *ngIf="weatherData">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Clima Actual</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Temperatura: {{ weatherData.main.temp }} °C</p>
+          <p>Descripción: {{ weatherData.weather[0].description }}</p>
+          <p>Ubicación: {{ weatherData.name }}</p>
+        </ion-card-content>
+      </ion-card>
     </div>
-  </div>
-</ion-content>
+
+  </ion-content>
+</div>

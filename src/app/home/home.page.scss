@@ -25,3 +25,11 @@
 #container a {
   text-decoration: none;
 }
+
+ion-menu {
+  --background: yellow !important;
+
+  ion-item {
+    color: black;
+  }
+}
