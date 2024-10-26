@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service'; // Asegúrate de que la ruta sea correcta
+import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
-import { WeatherService } from '../tiempo/weather.service'; // Ruta corregida
-import { environment } from 'src/environments/environment'; // Asegúrate de que el entorno esté configurado
+import { WeatherService } from '../tiempo/weather.service'; 
+import { environment } from 'src/environments/environment'; 
 import { HttpClient } from '@angular/common/http';
+import { CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint, CapacitorBarcodeScannerTypeHintALLOption } from '@capacitor/barcode-scanner';
+
 
 @Component({
   selector: 'app-home',
@@ -14,6 +16,7 @@ import { HttpClient } from '@angular/common/http';
 export class HomePage implements OnInit {
   username: string = '';
   result: string = '';
+  scannedData: any;
   weatherData: any;
 
   constructor(
@@ -21,12 +24,12 @@ export class HomePage implements OnInit {
     private userService: UserService,
     private router: Router,
     private navController: NavController,
-    public weatherService: WeatherService // Asegúrate de que esto esté bien definido
+    public weatherService: WeatherService
   ) {}
 
   ngOnInit() {
     this.username = this.userService.getUsername(); 
-    this.getUserLocation(); // Llama a esta función para obtener el clima al iniciar
+    this.getUserLocation(); 
   }
 
   getUserLocation() {
@@ -61,7 +64,12 @@ export class HomePage implements OnInit {
     this.navController.navigateForward(`/${page}`);
   }
 
-  async qrcode() {
-    await this.router.navigate(['/login']); 
-  }
+
+async qrcode(): Promise<void> {
+  const result = await CapacitorBarcodeScanner.scanBarcode({
+    hint: CapacitorBarcodeScannerTypeHint.ALL
+  });
+  this.result = result.ScanResult;
+}
+
 }
