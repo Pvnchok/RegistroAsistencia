@@ -1,14 +1,52 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Horario</ion-title>
+    <ion-title class="tittle">Horario</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-button id="open-popover">Open Popover</ion-button>
-<ion-popover [keepContentsMounted]="true" trigger="open-popover">
+<ion-content class="content">
+  <ion-button id="open-popover-Lunes">Lunes</ion-button>
+<ion-popover trigger="open-popover-Lunes">
   <ng-template>
-    <ion-content class="ion-padding">This content was mounted as soon as the popover was created.</ion-content>
+    <ion-content class="ion-padding">Libre</ion-content>
+
   </ng-template>
 </ion-popover>
+
+<ion-button id="open-popover-Martes">Martes</ion-button>
+<ion-popover trigger="open-popover-Martes">
+  <ng-template>
+    <ion-content class="ion-padding">ESTADÍSTICA DESCRIPTIVA</ion-content>
+    <ion-content class="ion-padding">INGLÉS INTERMEDIO</ion-content>
+  </ng-template>
+</ion-popover>
+
+<ion-button id="open-popover-Miercoles">Miercoles</ion-button>
+<ion-popover trigger="open-popover-Miercoles">
+  <ng-template>
+    <ion-content class="ion-padding">ÉTICA PARA EL TRABAJO</ion-content>
+    <ion-content class="ion-padding">INGLÉS INTERMEDIO</ion-content>
+  </ng-template>
+</ion-popover>
+
+<ion-button id="open-popover-Jueves">Jueves</ion-button>
+<ion-popover trigger="open-popover-Jueves">
+  <ng-template>
+    <ion-content class="ion-padding">PROGRAMACIÓN DE APLICACIONES MÓVILES</ion-content>
+    <ion-content class="ion-padding">INGLÉS INTERMEDIO</ion-content>
+    <ion-content class="ion-padding">CALIDAD DE SOFTWARE</ion-content>
+  </ng-template>
+</ion-popover>
+
+<ion-button id="open-popover-Viernes">Viernes</ion-button>
+<ion-popover trigger="open-popover-Viernes">
+  <ng-template>
+    <ion-content class="ion-padding">ESTADÍSTICA DESCRIPTIVA</ion-content>
+    <ion-content class="ion-padding">CALIDAD DE SOFTWARE</ion-content>
+    <ion-content class="ion-padding">INGLÉS INTERMEDIO</ion-content>
+    <ion-content class="ion-padding">ARQUITECTURA</ion-content>
+  </ng-template>
+</ion-popover>
+
+
 </ion-content>
