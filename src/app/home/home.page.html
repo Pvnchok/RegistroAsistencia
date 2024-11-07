@@ -7,19 +7,24 @@
   <ion-content class="ion-padding">
     <ion-list>
       <ion-item button shape="round" color="secondary" (click)="navigateTo('home')">
+        <img src="assets/img/home.png" alt="icono" style="width: 30px; height: 20px; margin-right: 8px;">
         Home
       </ion-item>
       <ion-item button shape="round" color="secondary" (click)="navigateTo('login')">
+        <img src="assets/img/iniciar.png" alt="icono" style="width: 30px; height: 20px; margin-right: 8px;">
         Log In
       </ion-item>
       <ion-item button shape="round" color="secondary" (click)="navigateTo('reset-password')">
+        <img src="assets/img/pasword.png" alt="icono" style="width: 30px; height: 20px; margin-right: 8px;">
         Reset Password
       </ion-item>
       <ion-item button shape="round" color="secondary" (click)="navigateTo('user')">
+        <img src="assets/img/usuario.png" alt="icono" style="width: 20px; height: 20px; margin-right: 8px;">
         User 
       </ion-item>
     </ion-list>
     <ion-item button shape="round" color="secondary" (click)="navigateTo('clases')">
+      <img src="assets/img/clases.png" alt="icono" style="width: 20px; height: 30px; margin-right: 8px;">
       Clases 
     </ion-item>
   </ion-content>
@@ -50,7 +55,12 @@
 
     <div class="button-container">
       <ion-button shape="round" color="secondary" (click)="qrcode()">
-        Registrar asistencia
+        <img src="assets/img/camara.png" alt="icono" style="width: 30px; height: 30px; margin-right: 8px;">
+        
+        ㅤRegistrar asistenciaㅤ
+        
+
+        <img src="assets/img/camara.png" alt="icono" style="width: 30px; height: 30px; margin-right: 8px;">
       </ion-button>
     </div>
 
@@ -63,7 +73,11 @@
     <div class="weather-container" *ngIf="weatherData">
       <ion-card>
         <ion-card-header>
-          <ion-card-title>Clima Actual</ion-card-title>
+          <ion-card-title>
+            <img src="assets/img/tiempo.png" alt="icono" style="width: 40px; height: 30px; margin-right: 8px;">ㅤClima Actual
+            
+          </ion-card-title>
+          
         </ion-card-header>
         <ion-card-content>
           <p>Temperatura: {{ weatherData.main.temp }} °C</p>
