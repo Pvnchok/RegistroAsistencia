@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  API_KEY :"7d3185bdfe04a3a01bd3b79bc0fd07e8",
-  API_URL :"https://api.openweathermap.org/data/2.5/"
-
+  API_KEY: '6ad1185c0c216083aa4c9984ec75658e',
+  API_URL: 'http://api.weatherstack.com/current'
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file
