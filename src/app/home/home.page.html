@@ -75,17 +75,16 @@
         <ion-card-header>
           <ion-card-title>
             <img src="assets/img/tiempo.png" alt="icono" style="width: 40px; height: 30px; margin-right: 8px;">ㅤClima Actual
-            
           </ion-card-title>
-          
         </ion-card-header>
         <ion-card-content>
-          <p>Temperatura: {{ weatherData.main.temp }} °C</p>
-          <p>Descripción: {{ weatherData.weather[0].description }}</p>
-          <p>Ubicación: {{ weatherData.name }}</p>
+          <p>Temperatura: {{ weatherData.current.temperature }} °C</p>
+          <p>Descripción: {{ weatherData.current.weather_descriptions[0] }}</p>
+          <p>Ubicación: {{ weatherData.location.name }}</p>
         </ion-card-content>
       </ion-card>
     </div>
+    
     <div class="form-container">
       <h1 style="color: #333333;">Hora actual: {{ horaActual }}</h1>
     </div>
