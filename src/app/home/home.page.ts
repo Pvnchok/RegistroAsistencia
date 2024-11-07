@@ -3,10 +3,8 @@ import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { WeatherService } from '../tiempo/weather.service'; 
-import { environment } from 'src/environments/environment'; 
 import { HttpClient } from '@angular/common/http';
-import { CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint, CapacitorBarcodeScannerTypeHintALLOption } from '@capacitor/barcode-scanner';
-
+import { CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint } from '@capacitor/barcode-scanner';
 
 @Component({
   selector: 'app-home',
@@ -14,10 +12,12 @@ import { CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint, CapacitorBarc
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+
   username: string = '';
   result: string = '';
   scannedData: any;
   weatherData: any;
+  horaActual: string = '';
 
   constructor(
     public httpClient: HttpClient,
@@ -28,8 +28,22 @@ export class HomePage implements OnInit {
   ) {}
 
   ngOnInit() {
+    // Llama a la función cada segundo para actualizar la hora
+    setInterval(() => {
+      this.obtenerHora();
+    }, 1000);
+
+    // Obtener el nombre de usuario
     this.username = this.userService.getUsername(); 
+    
+    // Obtener la ubicación del usuario
     this.getUserLocation(); 
+  }
+
+  obtenerHora() {
+    const now = new Date();
+    this.horaActual = now.toLocaleTimeString();
+    console.log(this.horaActual);  // Esto te ayudará a verificar que se actualiza correctamente
   }
 
   getUserLocation() {
@@ -64,12 +78,10 @@ export class HomePage implements OnInit {
     this.navController.navigateForward(`/${page}`);
   }
 
-
-async qrcode(): Promise<void> {
-  const result = await CapacitorBarcodeScanner.scanBarcode({
-    hint: CapacitorBarcodeScannerTypeHint.ALL
-  });
-  this.result = result.ScanResult;
-}
-
+  async qrcode(): Promise<void> {
+    const result = await CapacitorBarcodeScanner.scanBarcode({
+      hint: CapacitorBarcodeScannerTypeHint.ALL
+    });
+    this.result = result.ScanResult;
+  }
 }
