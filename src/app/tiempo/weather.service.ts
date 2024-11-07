@@ -7,13 +7,13 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class WeatherService {
-  private apiKey: string = environment.API_KEY; // Asegúrate de que esta clave esté en tu archivo de entorno
-  private apiUrl: string = 'https://api.openweathermap.org/data/2.5/weather';
+  private apiKey: string = environment.API_KEY;
+  private apiUrl: string = environment.API_URL;
 
   constructor(private http: HttpClient) {}
 
   getWeatherByCoords(lat: number, lon: number): Observable<any> {
-    const url = `${this.apiUrl}?lat=${lat}&lon=${lon}&appid=${this.apiKey}&units=metric`;
+    const url = `${this.apiUrl}?access_key=${this.apiKey}&query=${lat},${lon}`;
     return this.http.get(url);
   }
 }
