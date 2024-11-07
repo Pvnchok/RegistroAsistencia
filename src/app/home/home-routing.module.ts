@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomePage } from './home.page';
+import { Routes, RouterModule } from '@angular/router';
+
+import { HorarioPage } from './horario.page';
 
 const routes: Routes = [
   {
-    path: 'horario',
-    loadChildren: () => import('./horario/horario.module').then(m => m.HorarioPageModule)
-  },
+    path: '',
+    component: HorarioPage
+  }
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
-  exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class HorarioPageRoutingModule {}
+
