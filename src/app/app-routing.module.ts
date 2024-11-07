@@ -7,8 +7,7 @@ const routes: Routes = [
   { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule) },
   { path: 'reset-password', loadChildren: () => import('./reset-password/reset-password.module').then(m => m.ResetPasswordPageModule) },
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomePageModule) },
-  { path: 'Horario', loadChildren: () => import('./horario/horario.module').then(m => m.HorarioPageModule) },
-  { path: '**', component: PageNotFoundComponent },   {
+  { path: 'Horario', loadChildren: () => import('./horario/horario.module').then(m => m.HorarioPageModule) },   {
     path: 'user',
     loadChildren: () => import('./user/user.module').then( m => m.UserPageModule)
   },
