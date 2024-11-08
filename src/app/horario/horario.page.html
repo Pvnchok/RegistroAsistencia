@@ -1,8 +1,47 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title class="tittle">Horario</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Duoc UC</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item button shape="round" color="secondary" (click)="navigateTo('home')">
+        <img src="assets/img/home.png" alt="icono" style="width: 30px; height: 20px; margin-right: 8px;">
+        Home
+      </ion-item>
+      <ion-item button shape="round" color="secondary" (click)="navigateTo('login')">
+        <img src="assets/img/iniciar.png" alt="icono" style="width: 30px; height: 20px; margin-right: 8px;">
+        Log In
+      </ion-item>
+      <ion-item button shape="round" color="secondary" (click)="navigateTo('reset-password')">
+        <img src="assets/img/pasword.png" alt="icono" style="width: 30px; height: 20px; margin-right: 8px;">
+        Reset Password
+      </ion-item>
+      <ion-item button shape="round" color="secondary" (click)="navigateTo('user')">
+        <img src="assets/img/usuario.png" alt="icono" style="width: 20px; height: 20px; margin-right: 8px;">
+        User 
+      </ion-item>
+    </ion-list>
+    <ion-item button shape="round" color="secondary" (click)="navigateTo('Horario')">
+      <img src="assets/img/clases.png" alt="icono" style="width: 20px; height: 30px; margin-right: 8px;">
+      Clases 
+    </ion-item>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu Principal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+
 
 <ion-content class="content">
   <ion-button id="open-popover-Lunes">Lunes</ion-button>
