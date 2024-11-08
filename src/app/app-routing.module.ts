@@ -12,10 +12,7 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () => import('./user/user.module').then( m => m.UserPageModule)
   },
-  {
-    path: 'clases',
-    loadChildren: () => import('./clases/clases.module').then( m => m.ClasesPageModule)
-  },
+
   {
     path: 'horario',
     loadChildren: () => import('./horario/horario.module').then( m => m.HorarioPageModule)
