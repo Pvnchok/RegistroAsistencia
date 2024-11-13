@@ -6,6 +6,8 @@ import { WeatherService } from '../tiempo/weather.service';
 import { HttpClient } from '@angular/common/http';
 import { CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint } from '@capacitor/barcode-scanner';
 
+
+
 @Component({
   selector: 'app-horario',
   templateUrl: './horario.page.html',
@@ -13,6 +15,8 @@ import { CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint } from '@capac
 })
 export class HorarioPage implements OnInit {
 
+
+  segmentValue: string = 'first';
   username: string = '';
   result: string = '';
   scannedData: any;
@@ -24,7 +28,8 @@ export class HorarioPage implements OnInit {
     private userService: UserService,
     private router: Router,
     private navController: NavController,
-    public weatherService: WeatherService
+    public weatherService: WeatherService,
+    
   ) {}
 
   ngOnInit() {
@@ -85,3 +90,4 @@ export class HorarioPage implements OnInit {
     this.result = result.ScanResult;
   }
 }
+

@@ -13,52 +13,359 @@
   <ion-content class="ion-padding">
     <img src="assets/img/hogar.png" alt="icono" style="width: 25px; height: 25px; margin-right: 8px;" (click)="navigateTo('home')">
     
-  </ion-content>
+<div class="tittle">
 
 
-<ion-content class="content">
-  <ion-button id="open-popover-Lunes">Lunes</ion-button>
-<ion-popover trigger="open-popover-Lunes">
-  <ng-template>
-    <ion-content class="ion-padding">Libre</ion-content>
-
-  </ng-template>
-</ion-popover>
-
-<ion-button id="open-popover-Martes">Martes</ion-button>
-<ion-popover trigger="open-popover-Martes">
-  <ng-template>
-    <ion-content class="ion-padding">ESTADÍSTICA DESCRIPTIVA</ion-content>
-    <ion-content class="ion-padding">INGLÉS INTERMEDIO</ion-content>
-  </ng-template>
-</ion-popover>
-
-<ion-button id="open-popover-Miercoles">Miercoles</ion-button>
-<ion-popover trigger="open-popover-Miercoles">
-  <ng-template>
-    <ion-content class="ion-padding">ÉTICA PARA EL TRABAJO</ion-content>
-    <ion-content class="ion-padding">INGLÉS INTERMEDIO</ion-content>
-  </ng-template>
-</ion-popover>
-
-<ion-button id="open-popover-Jueves">Jueves</ion-button>
-<ion-popover trigger="open-popover-Jueves">
-  <ng-template>
-    <ion-content class="ion-padding">PROGRAMACIÓN DE APLICACIONES MÓVILES</ion-content>
-    <ion-content class="ion-padding">INGLÉS INTERMEDIO</ion-content>
-    <ion-content class="ion-padding">CALIDAD DE SOFTWARE</ion-content>
-  </ng-template>
-</ion-popover>
-
-<ion-button id="open-popover-Viernes">Viernes</ion-button>
-<ion-popover trigger="open-popover-Viernes">
-  <ng-template>
-    <ion-content class="ion-padding">ESTADÍSTICA DESCRIPTIVA</ion-content>
-    <ion-content class="ion-padding">CALIDAD DE SOFTWARE</ion-content>
-    <ion-content class="ion-padding">INGLÉS INTERMEDIO</ion-content>
-    <ion-content class="ion-padding">ARQUITECTURA</ion-content>
-  </ng-template>
-</ion-popover>
 
 
-</ion-content>
+  
+
+
+
+    <h1>Lunes</h1>
+    <ion-card class="accordion_default_cont">
+      <div id="collapse2" aria-labelledby="headingOne" data-parent="#accordion" class="collapse position-relative accordion_default_body" style="overflow-x: scroll;">
+        <ion-grid class="data_table w-100">
+          <ion-row>
+            <ion-col>
+              <p class="m-0 font-weight-bold" colspan="4">INGENIERÍA EN INFORMÁTICA</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="py-5">
+              <h2 class="text-center text-primary py-5">No tienes ramos para este día</h2>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+      </div>
+    </ion-card>
+
+  
+  
+
+
+
+ 
+    <h1>Martes</h1>
+    <ion-card class="accordion_default_cont">
+        <div id="collapse1" aria-labelledby="headingOne" data-parent="#accordion" class="position-relative accordion_default_body collapse show" style="overflow-x: scroll;">
+          <ion-grid class="data_table w-100">
+            <ion-row>
+              <ion-col>
+                <p class="m-0 font-weight-bold" colspan="4">INGENIERÍA EN INFORMÁTICA</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col class="mnw-100">
+                <p class="m-0 text-xl">08:31 - 09:50</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">MAT4140</p>
+                <p class="m-0">ESTADÍSTICA DESCRIPTIVA</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">Profesor:</p>
+                <p class="m-0">FRANCISCO ERNESTO ORELLANA VIDAL</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">SAN JOAQUÍN</p>
+                <p class="m-0 text-uppercase">SALA SJ-L7 LAB. DE COMPUTACION (30)</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col class="mnw-100">
+                <p class="m-0 text-xl">11:31 - 12:50</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">INI5111</p>
+                <p class="m-0">INGLÉS INTERMEDIO</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">Profesor:</p>
+                <p class="m-0">JESSICA ANDREA PIZARRO PARRA</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">SAN JOAQUÍN</p>
+                <p class="m-0 text-uppercase">SALA SJ-511 SALA DE CLASES (25)</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col class="mnw-100">
+                <p class="m-0 text-xl">13:01 - 14:20</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">PGY4121</p>
+                <p class="m-0">PROGRAMACIÓN DE APLICACIONES MÓVILES</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">Profesor:</p>
+                <p class="m-0">CARLOS FERNANDO MARTINEZ SANCHEZ</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">SAN JOAQUÍN</p>
+                <p class="m-0 text-uppercase">SALA SJ-L8 LAB. DE COMPUTACION (30)</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+    </ion-card>
+
+
+
+    <h1>Miercoles</h1>
+    <ion-card class="accordion_default_cont">
+      <div id="collapse2" aria-labelledby="headingOne" data-parent="#accordion" class="collapse position-relative accordion_default_body" style="overflow-x: scroll;">
+        <ion-grid class="data_table w-100">
+          <ion-row>
+            <ion-col>
+              <p class="m-0 font-weight-bold" colspan="4">INGENIERÍA EN INFORMÁTICA</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="mnw-100">
+              <p class="m-0 text-xl">10:01 - 11:20</p>
+            </ion-col>
+            <ion-col>
+              <p class="mb-2">EAY4470</p>
+              <p class="m-0">ÉTICA PARA EL TRABAJO</p>
+            </ion-col>
+            <ion-col>
+              <p class="mb-2">Profesor:</p>
+              <p class="m-0">EBER GERARDO CARVAJAL VALDEBENITO</p>
+            </ion-col>
+            <ion-col>
+              <p class="mb-2">SAN JOAQUÍN</p>
+              <p class="m-0 text-uppercase">SALA SJ-704 SALA DE CLASES (45)</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="mnw-100">
+              <p class="m-0 text-xl">11:31 - 12:50</p>
+            </ion-col>
+            <ion-col>
+              <p class="mb-2">INI5111</p>
+              <p class="m-0">INGLÉS INTERMEDIO</p>
+            </ion-col>
+            <ion-col>
+              <p class="mb-2">Profesor:</p>
+              <p class="m-0">JESSICA ANDREA PIZARRO PARRA</p>
+            </ion-col>
+            <ion-col>
+              <p class="mb-2">SAN JOAQUÍN</p>
+              <p class="m-0 text-uppercase">SALA SJ-511 SALA DE CLASES (25)</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-card>
+
+
+
+
+
+    <h1>Jueves</h1>
+      <ion-card class="accordion_default_cont">
+        <div id="collapse3" aria-labelledby="headingOne" data-parent="#accordion" class="position-relative accordion_default_body collapse" style="overflow-x: scroll;">
+          <ion-grid class="data_table w-100">
+            <ion-row>
+              <ion-col>
+                <p class="m-0 font-weight-bold" colspan="4">INGENIERÍA EN INFORMÁTICA</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col class="mnw-100">
+                <p class="m-0 text-xl">08:31 - 09:50</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">PGY4121</p>
+                <p class="m-0">PROGRAMACIÓN DE APLICACIONES MÓVILES</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">Profesor:</p>
+                <p class="m-0">CARLOS FERNANDO MARTINEZ SANCHEZ</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">SAN JOAQUÍN</p>
+                <p class="m-0 text-uppercase">SALA SJ-L8 LAB. DE COMPUTACION (30)</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col class="mnw-100">
+                <p class="m-0 text-xl">10:01 - 10:40</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">PGY4121</p>
+                <p class="m-0">PROGRAMACIÓN DE APLICACIONES MÓVILES</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">Profesor:</p>
+                <p class="m-0">CARLOS FERNANDO MARTINEZ SANCHEZ</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">SAN JOAQUÍN</p>
+                <p class="m-0 text-uppercase">SALA SJ-L8 LAB. DE COMPUTACION (30)</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col class="mnw-100">
+                <p class="m-0 text-xl">11:31 - 12:50</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">INI5111</p>
+                <p class="m-0">INGLÉS INTERMEDIO</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">Profesor:</p>
+                <p class="m-0">JESSICA ANDREA PIZARRO PARRA</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">SAN JOAQUÍN</p>
+                <p class="m-0 text-uppercase">SALA SJ-511 SALA DE CLASES (25)</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col class="mnw-100">
+                <p class="m-0 text-xl">13:01 - 14:20</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">CSY4111</p>
+                <p class="m-0">CALIDAD DE SOFTWARE</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">Profesor:</p>
+                <p class="m-0">PATRICIO ANDRES SOTO SERDIO</p>
+              </ion-col>
+              <ion-col>
+                <p class="mb-2">SAN JOAQUÍN</p>
+                <p class="m-0 text-uppercase">SALA SJ-L9 LAB. DE COMPUTACION (30)</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-card>
+    
+    
+
+
+
+      <h1>Viernes</h1>
+        <ion-card class="accordion_default_cont">
+          <div id="collapse4" aria-labelledby="headingOne" data-parent="#accordion" class="position-relative accordion_default_body collapse" style="overflow-x: scroll;">
+            <ion-grid class="data_table w-100">
+              <ion-row>
+                <ion-col>
+                  <p class="m-0 font-weight-bold" colspan="4">INGENIERÍA EN INFORMÁTICA</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="mnw-100">
+                  <p class="m-0 text-xl">08:31 - 09:50</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">MAT4140</p>
+                  <p class="m-0">ESTADÍSTICA DESCRIPTIVA</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">Profesor:</p>
+                  <p class="m-0">FRANCISCO ERNESTO ORELLANA VIDAL</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">SAN JOAQUÍN</p>
+                  <p class="m-0 text-uppercase">SALA SJ-L4 LAB. DE COMPUTACION (30)</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="mnw-100">
+                  <p class="m-0 text-xl">10:01 - 11:20</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">CSY4111</p>
+                  <p class="m-0">CALIDAD DE SOFTWARE</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">Profesor:</p>
+                  <p class="m-0">PATRICIO ANDRES SOTO SERDIO</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">SAN JOAQUÍN</p>
+                  <p class="m-0 text-uppercase">SALA SJ-L2 LAB. DE COMPUTACION (40)</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="mnw-100">
+                  <p class="m-0 text-xl">11:31 - 12:50</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">INI5111</p>
+                  <p class="m-0">INGLÉS INTERMEDIO</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">Profesor:</p>
+                  <p class="m-0">JESSICA ANDREA PIZARRO PARRA</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">SAN JOAQUÍN</p>
+                  <p class="m-0 text-uppercase">SALA SJ-511 SALA DE CLASES (25)</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="mnw-100">
+                  <p class="m-0 text-xl">13:41 - 14:20</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">ASY4131</p>
+                  <p class="m-0">ARQUITECTURA</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">Profesor:</p>
+                  <p class="m-0">JORGE AUGUSTO NIOCHET DIAZ</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">SAN JOAQUÍN</p>
+                  <p class="m-0 text-uppercase">SALA SJ-L6 TAL. HARDWARE (30)</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="mnw-100">
+                  <p class="m-0 text-xl">14:31 - 15:50</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">ASY4131</p>
+                  <p class="m-0">ARQUITECTURA</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">Profesor:</p>
+                  <p class="m-0">JORGE AUGUSTO NIOCHET DIAZ</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">SAN JOAQUÍN</p>
+                  <p class="m-0 text-uppercase">SALA SJ-L6 TAL. HARDWARE (30)</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="mnw-100">
+                  <p class="m-0 text-xl">16:01 - 17:20</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">ASY4131</p>
+                  <p class="m-0">ARQUITECTURA</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">Profesor:</p>
+                  <p class="m-0">JORGE AUGUSTO NIOCHET DIAZ</p>
+                </ion-col>
+                <ion-col>
+                  <p class="mb-2">SAN JOAQUÍN</p>
+                  <p class="m-0 text-uppercase">SALA SJ-L6 TAL. HARDWARE (30)</p>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </ion-card>
+      
+      
+
+
+
+</div>
