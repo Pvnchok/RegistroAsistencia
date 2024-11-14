@@ -8,19 +8,10 @@ const routes: Routes = [
   { path: 'reset-password', loadChildren: () => import('./reset-password/reset-password.module').then(m => m.ResetPasswordPageModule) },
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomePageModule) },
   { path: 'Horario', loadChildren: () => import('./horario/horario.module').then(m => m.HorarioPageModule) },
-     {
-    path: 'user',
-    loadChildren: () => import('./user/user.module').then( m => m.UserPageModule)
-  },
-
-  {
-    path: 'horario',
-    loadChildren: () => import('./horario/horario.module').then( m => m.HorarioPageModule)
-  }, { path: '**', component: PageNotFoundComponent },
-
- // Ruta para el 404
+  { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserPageModule) },
+  { path: 'horario-c', loadChildren: () => import('./horario-c/horario-c.module').then(m => m.HorarioCPageModule) },
+  { path: '**', component: PageNotFoundComponent } // 404 route
 ];
-
 
 @NgModule({
   imports: [
