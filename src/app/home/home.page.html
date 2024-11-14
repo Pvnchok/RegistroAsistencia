@@ -23,14 +23,19 @@
         User 
       </ion-item>
     </ion-list>
+    <ion-item button shape="round" color="secondary" (click)="navigateTo('Horario')">
+      <img src="assets/img/clases.png" alt="icono" style="width: 20px; height: 30px; margin-right: 8px;">
+      Clases 
+    </ion-item>
+    <ion-item button shape="round" color="secondary" (click)="navigateTo('horario-c')">
+      <img src="assets/img/creditos.png" alt="icono" style="width: 20px; height: 30px; margin-right: 8px;">
+      Horario
+    </ion-item> 
     <ion-item button shape="round" color="secondary" (click)="navigateTo('horario-c')">
       <img src="assets/img/clases.png" alt="icono" style="width: 20px; height: 30px; margin-right: 8px;">
       Clases 
     </ion-item>
-    <ion-item button shape="round" color="secondary" (click)="navigateTo('Horario')">
-      <ion-icon name="calendar" style="color: black; margin-right: 8px;" ></ion-icon>
-      Horario
-    </ion-item>   
+    
   </ion-content>
 </ion-menu>
 
@@ -57,16 +62,56 @@
       </ion-text>
     </div>
 
-    <div class="button-container">
-      <ion-button shape="round" color="secondary" (click)="qrcode()">
-        <img src="assets/img/camara.png" alt="icono" style="width: 30px; height: 30px; margin-right: 8px;">
-        
-        ㅤRegistrar asistenciaㅤ
-        
+    <ion-segment [(ngModel)]="segment" mode="ios">
+      <ion-segment-button shape="round" style="--color: #000000; --background: #F4A100;" (click)="qrcode()">
+        <ion-label> 
+          <img src="assets/img/camara.png" alt="icono" style="width: 30px; height: 30px; margin-right: 8px;">
+          ㅤRegistrar Asistenciaㅤ 
+          <img src="assets/img/camara.png" alt="icono" style="width: 30px; height: 30px; margin-right: 8px;">
+        </ion-label>
+      </ion-segment-button>
+      
+      <ion-segment-button value="generar" style="--color: #000000; --background: #F4A100;">
+        <ion-label>
+          <img src="assets/img/tuerca.png" alt="icono" style="width: 20px; height: 20px; margin-right: 8px;"> 
+          ㅤGenerar QR Asistenciaㅤ 
+          <img src="assets/img/tuerca.png" alt="icono" style="width: 20px; height: 20px; margin-right: 8px;">
+        </ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    
 
-        <img src="assets/img/camara.png" alt="icono" style="width: 30px; height: 30px; margin-right: 8px;">
-      </ion-button>
+<!----------------GENERAR-QR-dinamico-------------------->
+<div class="segment" *ngIf="segment === 'generar'">
+  <div class="segment-content">
+
+    <div id="qrimage">
+      <div class="d-flex-center">
+        <div class="d-flex-center qr-wrapper">
+          <!-- QR Arriba -->
+          <qr-code [value]="qrText" size="190" errorCorrectionLevel="M"></qr-code>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; color: black;">
+          <!-- Texto QR debajo del QR -->
+          <div>{{qrText}}</div>
+        
+          <!-- Cuadro para escribir debajo del QR -->
+          <ion-textarea
+            label="Sr./Sra profesora ingrese la credencial correspondiente a su clase."
+            label-placement="stacked"
+            fill="outline"
+            [(ngModel)]="qrText"   
+            rows="4"
+            [autoGrow]="true"
+            style="--ion-textarea-text-color: black; --ion-placeholder-color: black; text-align: center; margin-top: 20px;">
+          </ion-textarea>
+        </div>
+        
+      </div>
     </div>
+  </div>
+</div>
 
     <ion-list>
       <ion-item *ngIf="result">
