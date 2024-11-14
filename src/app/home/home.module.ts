@@ -5,22 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { QrCodeModule } from 'ng-qrcode';
 
 
 @NgModule({
-  
   imports: [
-    
-    IonicModule.forRoot(),
-    FormsModule, 
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,
-    QrCodeModule
-  ], bootstrap: [HomePage],
+    HomePageRoutingModule
+  ],
   declarations: [HomePage]
 })
 export class HomePageModule {}
-export class AppModule {}
