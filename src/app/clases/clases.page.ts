@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-horario-c',
-  templateUrl: './horario-c.page.html',
-  styleUrls: ['./horario-c.page.scss'],
+  selector: 'app-clases',
+  templateUrl: './clases.page.html',
+  styleUrls: ['./clases.page.scss'],
 })
-export class HorarioCPage implements OnInit {
+export class clasesPage implements OnInit {
   clases = [
     { nombre: 'Calidad de Software', codigo: 'CSY4111', creditos: 8 },
     { nombre: 'Programación Aplicaciones Móviles', codigo: 'PGY4121', creditos: 10 },

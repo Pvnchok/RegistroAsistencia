@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HorarioCPage } from './horario-c.page';
+import { clasesPage } from './clases.page';
 
-describe('HorarioCPage', () => {
-  let component: HorarioCPage;
-  let fixture: ComponentFixture<HorarioCPage>;
+describe('clasesPage', () => {
+  let component: clasesPage;
+  let fixture: ComponentFixture<clasesPage>;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HorarioCPage);
+    fixture = TestBed.createComponent(clasesPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
