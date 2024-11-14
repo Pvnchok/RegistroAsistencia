@@ -1,13 +1,18 @@
 <ion-header>
-  <ion-toolbar class="custom-toolbar">
-    <ion-title>Tu usuario</ion-title>
+  <ion-toolbar>
+    <ion-title>Perfil de Usuario</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content>
+  <ion-card>
+    <img [src]="userImage" alt="User Image" />
+    <ion-card-header>
+      <ion-card-title>{{ userName }}</ion-card-title>
+    </ion-card-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">user</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-card-content>
+      <p><strong>Email:</strong> {{ userEmail }}</p>
+      <p><strong>Edad:</strong> {{ userAge }} años</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
