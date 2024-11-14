@@ -9,8 +9,10 @@ const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomePageModule) },
   { path: 'Horario', loadChildren: () => import('./horario/horario.module').then(m => m.HorarioPageModule) },
   { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserPageModule) },
-  { path: 'horario-c', loadChildren: () => import('./horario-c/horario-c.module').then(m => m.HorarioCPageModule) },
-  { path: '**', component: PageNotFoundComponent } // 404 route
+  { path: 'horario-c', loadChildren: () => import('./horario-c/horario-c.module').then(m => m.HorarioCPageModule) },   
+  {path: 'registro',loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)},
+  { path: '**', component: PageNotFoundComponent }
+
 ];
 
 @NgModule({

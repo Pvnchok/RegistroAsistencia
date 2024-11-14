@@ -4,13 +4,24 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
+  user: any;
 
   constructor() { }
 
+  registro(username: string, password: string): boolean {
+    if (this.user[username]) {
+      
+      return false;
+    }
+    
+    this.user[username] = password;
+    return true;
+  }
+
   login(username: string, password: string): boolean {
-    // Lógica de autenticación
+    
     console.log(`Autenticando usuario: ${username}`);
-    return true; // Cambia esto según tu lógica de autenticación
+    return true; 
   }
 
   resetPassword(username: string): boolean {

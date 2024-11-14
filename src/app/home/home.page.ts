@@ -28,22 +28,22 @@ export class HomePage implements OnInit {
   ) {}
 
   ngOnInit() {
-    // Llama a la función cada segundo para actualizar la hora
+    
     setInterval(() => {
       this.obtenerHora();
     }, 1000);
 
-    // Obtener el nombre de usuario
+    
     this.username = this.userService.getUsername(); 
     
-    // Obtener la ubicación del usuario
+    
     this.getUserLocation(); 
   }
 
   obtenerHora() {
     const now = new Date();
     this.horaActual = now.toLocaleTimeString();
-    console.log(this.horaActual);  // Esto te ayudará a verificar que se actualiza correctamente
+    console.log(this.horaActual);  
   }
 
   getUserLocation() {
