@@ -35,7 +35,6 @@
       <img src="assets/img/clases.png" alt="icono" style="width: 20px; height: 30px; margin-right: 8px;">
       Clases 
     </ion-item>
-
     
   </ion-content>
 </ion-menu>
@@ -47,6 +46,7 @@
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
       <ion-title>Menu Principal</ion-title>
+      
     </ion-toolbar>
   </ion-header>
   
@@ -57,6 +57,14 @@
       <img src="assets/img/Logo_Duoc.png" alt="Logo Duoc UC" class="logo">
     </div>
 
+
+
+    
+
+
+
+
+    
     <div class="form-container">
       <ion-text>
         <h1 style="color: #333333;">Bienvenido, {{ username }} :)</h1>
@@ -82,10 +90,15 @@
     </ion-segment>
     
 
+
+
+
+
+
 <!----------------GENERAR-QR-dinamico-------------------->
 <div class="segment" *ngIf="segment === 'generar'">
   <div class="segment-content">
-
+    
     <div id="qrimage">
       <div class="d-flex-center">
         <div class="d-flex-center qr-wrapper">
@@ -114,30 +127,50 @@
   </div>
 </div>
 
+
+    
+  
+
+
     <ion-list>
       <ion-item *ngIf="result">
         {{ result }}
       </ion-item>
     </ion-list>
 
-    <div class="weather-container" *ngIf="weatherData">
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>
-            <img src="assets/img/tiempo.png" alt="icono" style="width: 40px; height: 30px; margin-right: 8px;">ㅤClima Actual
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <p>Temperatura: {{ weatherData.current.temperature }} °C</p>
-          <p>Descripción: {{ weatherData.current.weather_descriptions[0] }}</p>
-          <p>Ubicación: {{ weatherData.location.name }}</p>
-        </ion-card-content>
-      </ion-card>
-    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col push-sm="6">
+          <div class="weather-container" *ngIf="weatherData">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                <img src="assets/img/tiempo.png" alt="icono" style="width: 40px; height: 30px; margin-right: 8px;">ㅤClima Actual
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>Temperatura: {{ weatherData.current.temperature }} °C</p>
+              <p>Descripción: {{ weatherData.current.weather_descriptions[0] }}</p>
+              <p>Ubicación: {{ weatherData.location.name }}</p>
+            </ion-card-content>
+          </ion-card>
+          </div>
+        </ion-col>
+        <ion-col pull-sm="6">
+          <div class="weather-container">
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title>
+                  <h3 style="color: #333333;">Hora actual: {{ horaActual }}</h3>
+                </ion-card-title>
+              </ion-card-header>
+            </ion-card>
+            </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
     
-    <div class="form-container">
-      <h1 style="color: #333333;">Hora actual: {{ horaActual }}</h1>
-    </div>
 
   </ion-content>
 </div>

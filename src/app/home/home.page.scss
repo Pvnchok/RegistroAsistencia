@@ -119,3 +119,11 @@ ion-textarea{
   --ion-placeholder-color: black;
   text-align: center;
 }
+
+.two-step{
+  border-color: green($color: #dc1313);
+  border-inline-color: #dc1313;
+  color: #dc1313;
+  outline-color: #dc1313;
+  border-color: #dc1313;
+}
