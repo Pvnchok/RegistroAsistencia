@@ -93,12 +93,34 @@
 
 
 
-
+    
+      <ion-toolbar>
+        <ion-title>Seleccionar materia</ion-title>
+      </ion-toolbar>
+   
+    
+    <ion-content>
+      <ion-item>
+        <ion-label>Selecciona una materia</ion-label>
+        <ion-select [(ngModel)]="materiaSeleccionada" placeholder="Elige una materia">
+          <ion-select-option value="Lenguaje">Lenguaje</ion-select-option>
+          <ion-select-option value="Matematicas">Matemáticas</ion-select-option>
+          <ion-select-option value="Ingles">Inglés</ion-select-option>
+          <ion-select-option value="Historia">Historia</ion-select-option>
+          <ion-select-option value="Ciencias Naturales">Ciencias Naturales</ion-select-option>
+        </ion-select>
+      </ion-item>
+    
+      <ion-button expand="full" (click)="guardarSeleccion()">Guardar Selección</ion-button>
+      
+      <div *ngIf="materiaSeleccionada">
+        <p>Materia seleccionada: {{ materiaSeleccionada }}</p>
+      </div>
+    
 
 <!----------------GENERAR-QR-dinamico-------------------->
-<div class="segment" *ngIf="segment === 'generar'">
+<div *ngIf="segment === 'generar'">
   <div class="segment-content">
-    
     <div id="qrimage">
       <div class="d-flex-center">
         <div class="d-flex-center qr-wrapper">
@@ -108,8 +130,8 @@
 
         <div style="display: flex; flex-direction: column; align-items: center; text-align: center; color: black;">
           <!-- Texto QR debajo del QR -->
-          <div>{{qrText}}</div>
-        
+          <div>{{ qrText }}</div>
+
           <!-- Cuadro para escribir debajo del QR -->
           <ion-textarea
             label="Sr./Sra profesora ingrese la credencial correspondiente a su clase."
@@ -121,14 +143,13 @@
             style="--ion-textarea-text-color: black; --ion-placeholder-color: black; text-align: center; margin-top: 20px;">
           </ion-textarea>
         </div>
-        
       </div>
     </div>
   </div>
 </div>
 
 
-    
+</ion-content>
   
 
 

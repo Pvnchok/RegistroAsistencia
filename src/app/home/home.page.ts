@@ -14,15 +14,17 @@ import { CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint } from '@capac
 })
 export class HomePage implements OnInit {
 
-  segment = 'generar';
-  qrText = '';
-  
+  segment: string = 'generar';
+  qrText: string = '';
+  materiaSeleccionada: string = '';
   username: string = '';
   result: string = '';
   scannedData: any;
   weatherData: any;
   horaActual: string = '';
+  
 
+  
   constructor(
     public httpClient: HttpClient,
     private userService: UserService,
@@ -88,4 +90,11 @@ export class HomePage implements OnInit {
     });
     this.result = result.ScanResult;
   }
+
+  guardarSeleccion() {
+    this.qrText = this.materiaSeleccionada;
+
+    console.log('Materia seleccionada:', this.materiaSeleccionada);
+  }
+
 }
