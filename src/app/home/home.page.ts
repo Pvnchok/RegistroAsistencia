@@ -22,7 +22,10 @@ export class HomePage implements OnInit {
   scannedData: any;
   weatherData: any;
   horaActual: string = '';
-  
+  asignatura: string = '';
+  seccion: string = '';
+  sala: string = '';
+  fecha: string = '';
 
   
   constructor(
@@ -92,9 +95,29 @@ export class HomePage implements OnInit {
   }
 
   guardarSeleccion() {
-    this.qrText = this.materiaSeleccionada;
+    this.fecha = this.obtenerFechaSistema();
+    // Formar el texto en el formato deseado
+    if (this.asignatura && this.seccion && this.sala && this.fecha) {
+      this.qrText = `${this.asignatura}|${this.seccion}|${this.sala}|${this.fecha}`;
+    } else {
+      this.qrText = 'Faltan datos para completar la entrada.';
+    }
 
-    console.log('Materia seleccionada:', this.materiaSeleccionada);
+    // Mostrar el texto resultante en consola para depuración
+    console.log('Texto generado:', this.qrText);
   }
+
+  
+
+
+  obtenerFechaSistema(): string {
+    const fecha = new Date();
+    const year = fecha.getFullYear();
+    const month = String(fecha.getMonth() + 1).padStart(2, '0'); // Mes empieza en 0
+    const day = String(fecha.getDate()).padStart(2, '0');
+    
+    return `${year}${month}${day}`;
+  }
+
 
 }

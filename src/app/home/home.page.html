@@ -98,25 +98,56 @@
         <ion-title>Seleccionar materia</ion-title>
       </ion-toolbar>
    
+<ion-content>
+  <!-- Select para Asignatura -->
+  <ion-item>
+    <ion-label>Selecciona una asignatura</ion-label>
+    <ion-select [(ngModel)]="asignatura" placeholder="Elige una asignatura">
+      <ion-select-option value="ASY4131">ASY4131</ion-select-option>
+      <ion-select-option value="CSY4111">CSY4111</ion-select-option>
+      <ion-select-option value="MAT4140">MAT4140</ion-select-option>
+      <ion-select-option value="EAY4450">EAY4450</ion-select-option>
+      <ion-select-option value="INI5111">INI5111</ion-select-option>
+      <ion-select-option value="APY4461">APY4461</ion-select-option>
+      <ion-select-option value="PGY4121">PGY4121</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Select para Sección -->
+  <ion-item>
+    <ion-label>Selecciona una sección</ion-label>
+    <ion-select [(ngModel)]="seccion" placeholder="Elige una sección">
+      <ion-select-option value="001D">001D</ion-select-option>
+      <ion-select-option value="002D">002D</ion-select-option>
+      <ion-select-option value="003D">003D</ion-select-option>
+      <ion-select-option value="004D">004D</ion-select-option>
+      <ion-select-option value="005D">005D</ion-select-option>
+      <ion-select-option value="006D">006D</ion-select-option>
+      <ion-select-option value="007D">007D</ion-select-option>
+      <ion-select-option value="008D">008D</ion-select-option>
+      <ion-select-option value="009D">009D</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Select para Sala -->
+  <ion-item>
+    <ion-label>Selecciona una sala</ion-label>
+    <ion-select [(ngModel)]="sala" placeholder="Elige una sala">
+      <ion-select-option value="L3">L3</ion-select-option>
+      <ion-select-option value="L4">L4</ion-select-option>
+      <ion-select-option value="L5">L5</ion-select-option>
+      <ion-select-option value="L6">L6</ion-select-option>
+      <ion-select-option value="L7">L7</ion-select-option>
+      <ion-select-option value="L8">L8</ion-select-option>
+      <ion-select-option value="L9">L9</ion-select-option>
+      <ion-select-option value="L10">L10</ion-select-option>
+      <ion-select-option value="L11">L11</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+
     
-    <ion-content>
-      <ion-item>
-        <ion-label>Selecciona una materia</ion-label>
-        <ion-select [(ngModel)]="materiaSeleccionada" placeholder="Elige una materia">
-          <ion-select-option value="Lenguaje">Lenguaje</ion-select-option>
-          <ion-select-option value="Matematicas">Matemáticas</ion-select-option>
-          <ion-select-option value="Ingles">Inglés</ion-select-option>
-          <ion-select-option value="Historia">Historia</ion-select-option>
-          <ion-select-option value="Ciencias Naturales">Ciencias Naturales</ion-select-option>
-        </ion-select>
-      </ion-item>
-    
-      <ion-button expand="full" (click)="guardarSeleccion()">Guardar Selección</ion-button>
-      
-      <div *ngIf="materiaSeleccionada">
-        <p>Materia seleccionada: {{ materiaSeleccionada }}</p>
-      </div>
-    
+  <ion-button expand="full" (click)="guardarSeleccion()">Guardar Selección</ion-button>
 
 <!----------------GENERAR-QR-dinamico-------------------->
 <div *ngIf="segment === 'generar'">
