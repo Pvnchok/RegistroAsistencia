@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar class="custom-toolbar">
-    <ion-title> Ingreso de usuario </ion-title>
+    <ion-title>Ingreso de usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -20,10 +20,12 @@
     </ion-item>
 
     <div class="button-container">
-      <ion-button expand="block" shape="round" color="secondary" (click)="login()">Ingresarㅤ
+      <ion-button expand="block" shape="round" color="secondary" (click)="login()">Ingresar
         <img src="assets/img/ingresar.png" alt="icono" style="width: 25px; height: 25px; margin-right: 8px;">
       </ion-button>
-      <ion-button expand="full" shape="round" routerLink="/registro" (click)="login()">Registrarse</ion-button>
+      <ion-button expand="full" shape="round" routerLink="/registro">
+        Registrarse
+      </ion-button>
 
       <ion-button expand="block" fill="clear" color="primary" routerLink="/reset-password">
         Restablecer Contraseña <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
@@ -31,4 +33,3 @@
     </div>
   </div>
 </ion-content>
-

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { UserService } from '../user.service'; 
+import { UserService } from '../user.service';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -21,8 +21,14 @@ export class LoginPage {
   ) {}
 
   async login() {
+    const storedUsername = sessionStorage.getItem('username');
+    const storedPassword = sessionStorage.getItem('password');
+
     if (this.username === 'Admin' && this.password === '12345') {
       this.userService.setUsername(this.username); 
+      this.router.navigate(['/home']);
+    } else if (this.username === storedUsername && this.password === storedPassword) {
+      this.userService.setUsername(this.username);
       this.router.navigate(['/home']);
     } else {
       const alert = await this.alertController.create({

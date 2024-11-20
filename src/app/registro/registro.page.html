@@ -1,3 +1,10 @@
+
+<ion-buttons slot="start">
+  <ion-button (click)="navigateTo('login')">
+    <img src="assets/img/hogar.png" alt="icono" style="width: 25px; height: 25px;" />
+  </ion-button>
+</ion-buttons>
+
 <ion-header>
   <ion-toolbar>
     <ion-title>Registro</ion-title>
@@ -5,20 +12,25 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+  
   <ion-item>
-    <ion-label position="floating">Nombre de Usuario</ion-label>
-    <ion-input [(ngModel)]="username" type="text"></ion-input>
+    <ion-label position="floating" style="color: black;">Nombre de Usuario</ion-label>
+    <ion-input [(ngModel)]="username" type="text" ></ion-input>
   </ion-item>
 
+  
   <ion-item>
-    <ion-label position="floating">Contraseña</ion-label>
-    <ion-input [(ngModel)]="password" type="password"></ion-input>
+    <ion-label position="floating" style="color: black;">Contraseña</ion-label>
+    <ion-input [(ngModel)]="password" type="password" ></ion-input>
   </ion-item>
 
+  
   <ion-item>
-    <ion-label position="floating">Confirmar Contraseña</ion-label>
-    <ion-input [(ngModel)]="confirmPassword" type="password"></ion-input>
+    <ion-label position="floating" style="color: black;">Confirmar Contraseña</ion-label>
+    <ion-input [(ngModel)]="confirmPassword" type="password" ></ion-input>
   </ion-item>
 
+  
   <ion-button expand="full" (click)="registro()">Registrarse</ion-button>
+  
 </ion-content>
