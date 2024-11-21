@@ -1,20 +1,33 @@
 <ion-header>
   <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-button (click)="navigateToHome()">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
     <ion-title>Tu usuario</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <ion-content [fullscreen]="true">
+
+<ion-content [fullscreen]="true">
   <ion-card>
     <ion-header collapse="condense">
       <ion-toolbar>
-        <ion-title size="large">user</ion-title>
+        <ion-title size="large">User</ion-title>
       </ion-toolbar>
     </ion-header>
+
     <ion-card-content>
+      <div class="profile-container">
+        <img [src]="userImage" alt="Foto de usuario" class="user-image">
+        <ion-button expand="block" (click)="fileInput.click()">Subir Foto</ion-button>
+        <input type="file" #fileInput accept="image/*" hidden (change)="onFileSelected($event)">
+      </div>
+
+      <p><strong>Nombre:</strong> {{ userName }}</p>
       <p><strong>Email:</strong> {{ userEmail }}</p>
       <p><strong>Edad:</strong> {{ userAge }} años</p>
     </ion-card-content>
   </ion-card>
-</ion-content>
 </ion-content>
