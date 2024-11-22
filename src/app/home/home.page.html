@@ -23,10 +23,6 @@
         User 
       </ion-item>
     </ion-list>
-    <ion-item button shape="round" color="secondary" (click)="navigateTo('horario-c')">
-      <img src="assets/img/clases.png" alt="icono" style="width: 20px; height: 30px; margin-right: 8px;">
-      Clases 
-    </ion-item>
     <ion-item button shape="round" color="secondary" (click)="navigateTo('Horario')">
       <ion-icon name="calendar" style="color: black; margin-right: 8px;" ></ion-icon>
       Horario
@@ -46,60 +42,44 @@
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
       <ion-title>Menu Principal</ion-title>
-      
     </ion-toolbar>
   </ion-header>
-  
   <hr>
-
   <ion-content class="content-background">
     <div class="logo-container">
       <img src="assets/img/Logo_Duoc.png" alt="Logo Duoc UC" class="logo">
     </div>
-
-
-
-  
-
-
-
-
-    
     <div class="form-container">
       <ion-text>
         <h1 style="color: #333333;">Bienvenido, {{ username }} :)</h1>
       </ion-text>
     </div>
 
-    <ion-segment [(ngModel)]="segment" mode="ios">
-      <ion-segment-button shape="round" style="--color: #000000; --background: #F4A100;" (click)="qrcode()">
-        <ion-label> 
-          <img src="assets/img/camara.png" alt="icono" style="width: 30px; height: 30px; margin-right: 8px;">
-          ㅤRegistrar Asistenciaㅤ 
-          <img src="assets/img/camara.png" alt="icono" style="width: 30px; height: 30px; margin-right: 8px;">
-        </ion-label>
-      </ion-segment-button>
-      
-      <ion-segment-button value="generar" style="--color: #000000; --background: #F4A100;">
-        <ion-label>
-          <img src="assets/img/tuerca.png" alt="icono" style="width: 20px; height: 20px; margin-right: 8px;"> 
-          ㅤGenerar QR Asistenciaㅤ 
-          <img src="assets/img/tuerca.png" alt="icono" style="width: 20px; height: 20px; margin-right: 8px;">
-        </ion-label>
-      </ion-segment-button>
-    </ion-segment>
-    
+  <ion-segment [(ngModel)]="segment" mode="ios">
+  <ion-segment-button shape="round" style="--color: #000000; --background: #F4A100;" (click)="qrcode()">
+    <ion-label style="display: flex; align-items: center; justify-content: center;">
+      <img src="assets/img/camara.png" alt="icono" style="width: 30px; height: 30px;">
+      <span style="white-space: nowrap;">Registrar Asistencia</span>
+      <img src="assets/img/camara.png" alt="icono" style="width: 30px; height: 30px;">
+    </ion-label>
+  </ion-segment-button>
 
-
-
+  <ion-segment-button value="generar" style="--color: #000000; --background: #F4A100;">
+    <ion-label style="display: flex; align-items: center; justify-content: center;">
+      <img src="assets/img/tuerca.png" alt="icono" style="width: 20px; height: 20px;">
+      <span style="white-space: nowrap;">Generar QR Asistencia</span>
+      <img src="assets/img/tuerca.png" alt="icono" style="width: 20px; height: 20px;">
+    </ion-label>
+  </ion-segment-button>
+</ion-segment>
 
     
+
+
       <ion-toolbar>
         <ion-title>Seleccionar materia</ion-title>
-      </ion-toolbar>
-   
+      </ion-toolbar>  
 <ion-content>
-  <!-- Select para Asignatura -->
   <ion-item>
     <ion-label>Selecciona una asignatura</ion-label>
     <ion-select [(ngModel)]="asignatura" placeholder="Elige una asignatura">
@@ -112,8 +92,6 @@
       <ion-select-option value="PGY4121">PGY4121</ion-select-option>
     </ion-select>
   </ion-item>
-
-  <!-- Select para Sección -->
   <ion-item>
     <ion-label>Selecciona una sección</ion-label>
     <ion-select [(ngModel)]="seccion" placeholder="Elige una sección">
@@ -128,8 +106,6 @@
       <ion-select-option value="009D">009D</ion-select-option>
     </ion-select>
   </ion-item>
-
-  <!-- Select para Sala -->
   <ion-item>
     <ion-label>Selecciona una sala</ion-label>
     <ion-select [(ngModel)]="sala" placeholder="Elige una sala">
@@ -143,27 +119,16 @@
       <ion-select-option value="L10">L10</ion-select-option>
       <ion-select-option value="L11">L11</ion-select-option>
     </ion-select>
-  </ion-item>
-
-
-    
+  </ion-item>  
   <ion-button expand="full" (click)="guardarSeleccion()">Guardar Selección</ion-button>
-
-<!----------------GENERAR-QR-dinamico-------------------->
 <div *ngIf="segment === 'generar'">
   <div class="segment-content">
     <div id="qrimage">
       <div class="d-flex-center">
         <div class="d-flex-center qr-wrapper">
-          <!-- QR Arriba -->
           <qr-code [value]="qrText" size="190" errorCorrectionLevel="M"></qr-code>
         </div>
-
         <div style="display: flex; flex-direction: column; align-items: center; text-align: center; color: black;">
-          <!-- Texto QR debajo del QR -->
-          
-
-          <!-- Cuadro para escribir debajo del QR -->
           <ion-textarea
             [readonly]="true"
             label="Sr./Sra profesora ingrese la credencial correspondiente a su clase."
@@ -179,18 +144,12 @@
     </div>
   </div>
 </div>
-
-
 </ion-content>
-  
-
-
     <ion-list>
       <ion-item *ngIf="result">
         {{ result }}
       </ion-item>
     </ion-list>
-
     <ion-grid>
       <ion-row>
         <ion-col push-sm="6">
@@ -222,8 +181,5 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-
-    
-
   </ion-content>
 </div>
