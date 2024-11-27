@@ -1,4 +1,3 @@
-
 <ion-buttons slot="start">
   <ion-button (click)="navigateTo('login')">
     <img src="assets/img/hogar.png" alt="icono" style="width: 25px; height: 25px;" />
@@ -11,26 +10,31 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  
-  <ion-item>
-    <ion-label position="floating" style="color: black;">Nombre de Usuario</ion-label>
-    <ion-input [(ngModel)]="username" type="text" ></ion-input>
-  </ion-item>
 
-  
-  <ion-item>
-    <ion-label position="floating" style="color: black;">Contraseña</ion-label>
-    <ion-input [(ngModel)]="password" type="password" ></ion-input>
-  </ion-item>
+<ion-content class="content-background">
+  <div class="logo-container">
+    <img src="assets/img/Logo_Duoc.png" alt="Logo Duoc UC" class="logo">
+  </div>
 
-  
-  <ion-item>
-    <ion-label position="floating" style="color: black;">Confirmar Contraseña</ion-label>
-    <ion-input [(ngModel)]="confirmPassword" type="password" ></ion-input>
-  </ion-item>
+  <div class="form-container">
+    <ion-item>
+      <ion-label position="floating" style="color: black;">Nombre de Usuario</ion-label>
+      <ion-input [(ngModel)]="username" type="text" ></ion-input>
+    </ion-item>
 
-  
-  <ion-button expand="full" (click)="registro()">Registrarse</ion-button>
-  
+    <ion-item>
+      <ion-label position="floating" style="color: black;">Contraseña</ion-label>
+      <ion-input [(ngModel)]="password" type="password" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" style="color: black;">Confirmar Contraseña</ion-label>
+      <ion-input [(ngModel)]="confirmPassword" type="password" ></ion-input>
+    </ion-item>
+
+    <div class="button-container">
+      <ion-button expand="full" (click)="registro()">Registrarse</ion-button>
+
+    </div>
+  </div>
 </ion-content>
