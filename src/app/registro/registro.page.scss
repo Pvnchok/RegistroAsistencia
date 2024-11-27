@@ -27,3 +27,19 @@ box-shadow: unset;
 
 
 }
+
+
+
+.sticky-footer {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--ion-background-color);
+  font-size: 12px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+ion-content {
+  padding-bottom: 70px; /* Da espacio para el pie de página */
+}
