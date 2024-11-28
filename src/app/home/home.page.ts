@@ -5,7 +5,7 @@ import { NavController } from '@ionic/angular';
 import { WeatherService } from '../tiempo/weather.service'; 
 import { HttpClient } from '@angular/common/http';
 import { CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint } from '@capacitor/barcode-scanner';
-
+import { Storage } from '@ionic/storage-angular'; 
 
 @Component({
   selector: 'app-home',
@@ -27,32 +27,31 @@ export class HomePage implements OnInit {
   sala: string = '';
   fecha: string = '';
 
-  
   constructor(
     public httpClient: HttpClient,
     private userService: UserService,
     private router: Router,
     private navController: NavController,
-    public weatherService: WeatherService
+    public weatherService: WeatherService,
+    private storage: Storage  
   ) {}
 
   ngOnInit() {
-    // Llama a la función cada segundo para actualizar la hora
+    this.storage.create().then(() => {  // Inicializa el storage
+      this.loadTheme();
+    });
+  
     setInterval(() => {
       this.obtenerHora();
     }, 1000);
-
-    // Obtener el nombre de usuario
+  
     this.username = this.userService.getUsername(); 
-    
-    // Obtener la ubicación del usuario
     this.getUserLocation(); 
   }
 
   obtenerHora() {
     const now = new Date();
     this.horaActual = now.toLocaleTimeString();
-    console.log(this.horaActual);  // Esto te ayudará a verificar que se actualiza correctamente
   }
 
   getUserLocation() {
@@ -96,28 +95,38 @@ export class HomePage implements OnInit {
 
   guardarSeleccion() {
     this.fecha = this.obtenerFechaSistema();
-    // Formar el texto en el formato deseado
     if (this.asignatura && this.seccion && this.sala && this.fecha) {
       this.qrText = `${this.asignatura}|${this.seccion}|${this.sala}|${this.fecha}`;
     } else {
       this.qrText = 'Faltan datos para completar la entrada.';
     }
 
-    // Mostrar el texto resultante en consola para depuración
     console.log('Texto generado:', this.qrText);
   }
-
-  
-
 
   obtenerFechaSistema(): string {
     const fecha = new Date();
     const year = fecha.getFullYear();
-    const month = String(fecha.getMonth() + 1).padStart(2, '0'); // Mes empieza en 0
+    const month = String(fecha.getMonth() + 1).padStart(2, '0');
     const day = String(fecha.getDate()).padStart(2, '0');
     
     return `${year}${month}${day}`;
   }
 
+  toggleTheme() {
+    const currentTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
+    document.body.classList.toggle('dark', currentTheme === 'dark');
+    this.saveTheme(currentTheme);
+  }
 
-} 
+  async saveTheme(theme: string) {
+    await this.storage.set('theme', theme);
+  }
+
+  async loadTheme() {
+    const savedTheme = await this.storage.get('theme');
+    if (savedTheme) {
+      document.body.classList.toggle('dark', savedTheme === 'dark');
+    }
+  }
+}
