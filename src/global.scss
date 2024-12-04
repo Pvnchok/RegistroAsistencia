@@ -102,6 +102,31 @@ ion-button[fill="clear"] {
   --color: #000;
 }
 
+.menu-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+.segment-icon {
+  width: 25px;
+  height: 25px;
+  margin: 0 8px;
+}
+
+.segment-button {
+  --color: #000000;
+  --background: #F4A100;
+}
+
+.sticky-footer {
+  position: sticky;
+  bottom: 0;
+  background-color: #003DA5;
+  color: white;
+  text-align: center;
+}
+
   
   
   

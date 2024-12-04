@@ -25,6 +25,7 @@
     "@capacitor/barcode-scanner": "^1.0.1",
     "@capacitor/cli": "^6.1.2",
     "@capacitor/core": "^6.1.2",
+    "@capacitor/geolocation": "^6.0.2",
     "@ionic/angular": "^8.0.0",
     "@ionic/storage-angular": "^4.0.0",
     "angularx-qrcode": "^18.0.2",
