@@ -14,6 +14,7 @@ npm audit fix
 Y si aun con eso no funciona, entonces no sé 
 
 probar instalar estos 
+<br />
 npm install @capacitor-mlkit/barcode-scanning
-
+<br />
 npm install @capacitor/barcode-scanner
