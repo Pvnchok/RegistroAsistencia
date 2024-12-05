@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,9 +6,9 @@ import { Router } from '@angular/router';
   templateUrl: './user.page.html',
   styleUrls: ['./user.page.scss'],
 })
-export class UserPage {
+export class UserPage implements OnInit {
 
-  userName: string = 'Panchito';
+  userName: string = '';
   userEmail: string = 'Panchito.tilin@duocuc.cl';
   userAge: number = 18;
   userImage: string = '';
@@ -16,6 +16,14 @@ export class UserPage {
   constructor(private router: Router) {
     const savedImage = localStorage.getItem('userImage');
     this.userImage = savedImage || 'assets/img/gato.jpg';
+  }
+
+  ngOnInit() {
+    // Recuperar el username desde sessionStorage
+    const storedUsername = sessionStorage.getItem('username');
+    if (storedUsername) {
+      this.userName = storedUsername;
+    }
   }
 
   onFileSelected(event: Event) {

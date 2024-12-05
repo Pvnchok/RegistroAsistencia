@@ -15,3 +15,4 @@ describe('RegistroPage', () => {
     expect(component).toBeTruthy();
   });
 });
+

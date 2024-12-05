@@ -25,9 +25,11 @@ export class LoginPage {
     const storedPassword = sessionStorage.getItem('password');
 
     if (this.username === 'Admin' && this.password === '12345') {
+      sessionStorage.setItem('username', this.username); // Guardar en sessionStorage
       this.userService.setUsername(this.username); 
       this.router.navigate(['/home']);
     } else if (this.username === storedUsername && this.password === storedPassword) {
+      sessionStorage.setItem('username', this.username); // Guardar en sessionStorage
       this.userService.setUsername(this.username);
       this.router.navigate(['/home']);
     } else {
