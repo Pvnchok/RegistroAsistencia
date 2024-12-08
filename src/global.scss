@@ -36,21 +36,20 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
 
+
+
+
+
 /* Estilos para el modo claro */
 ion-item {
   --background: white;
   --color: black;
   --border-width: 1px;
   --border-radius: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 10px; 
 }
 
 ion-select {
-  --background: white;
-  --color: black;
-}
-
-ion-select-option {
   --background: white;
   --color: black;
 }
@@ -62,13 +61,26 @@ body.dark ion-select {
   --color: white;
 }
 
+/* Asegúrate también de ajustar los estilos de los elementos de la lista */
 body.dark ion-select-option {
   --background: black;
   --color: white;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 ion-label {
-  color: #003DA5;
+  color: #003DA5; 
 }
 
 ion-input {
@@ -77,6 +89,7 @@ ion-input {
   margin: 0 auto;
   font-size: 14px;
 }
+
 
 .logo-container {
   text-align: center;
@@ -129,6 +142,13 @@ ion-button[fill="clear"] {
   text-align: center;
 }
 
+  
+  
+  
+  
+
+
+
 body {
   background-color: white;
   color: black;
@@ -139,8 +159,8 @@ body.dark {
   color: white;
 }
 
-/* Asegúrate de que otros elementos también cambien sus estilos */
-ion-header, ion-toolbar, ion-content, ion-footer, ion-select, ion-item, ion-label {
+/* Asegurarte de que otros elementos también cambian sus estilos */
+ion-header, ion-toolbar, ion-content, ion-footer, ion-select {
   background-color: inherit;
   color: inherit;
 }
@@ -148,4 +168,6 @@ ion-header, ion-toolbar, ion-content, ion-footer, ion-select, ion-item, ion-labe
 ion-button {
   --background: inherit;
   --color: inherit;
+  
 }
+
