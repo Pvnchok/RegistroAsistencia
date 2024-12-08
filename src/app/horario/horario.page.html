@@ -4,25 +4,16 @@
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
+        <ion-button (click)="navigateTo('home')">
+          <img src="assets/img/hogar.png" alt="icono" style="width: 25px; height: 25px;" />
+        </ion-button>
       </ion-buttons>
-      <ion-title>Menu Principal</ion-title>
+      <ion-title>Horario</ion-title>
     </ion-toolbar>
   </ion-header>
+
 <ion-content>
-  <ion-buttons slot="start">
-    <ion-button (click)="navigateTo('home')">
-      <img src="assets/img/hogar.png" alt="icono" style="width: 25px; height: 25px;" />
-    </ion-button>
-  </ion-buttons>
-<div class="tittle">
-
-
-
-
-
-
-
+  <div class="tittle">
 
     <h1>Lunes</h1>
     <ion-card class="accordion_default_cont">
@@ -365,5 +356,5 @@
             </ion-grid>
           </div>
         </ion-card>
-      </div>
+  </div>
 </ion-content>

@@ -35,44 +35,48 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
-:root {
-  --ion-background-color: #FFFFFF; 
-  --ion-color-primary: #003DA5;  
-  --ion-color-primary-rgb: 0, 61, 165;
-  --ion-color-secondary: #F5A800;  
-  --ion-color-secondary-rgb: 245, 168, 0;
-  --ion-color-dark: #333333;  
-  --ion-color-light: #FFFFFF;  
-}
 
-.content-background {
-  --background: #FFFFFF; 
-}
-
+/* Estilos para el modo claro */
 ion-item {
-  --background: #FFFFFF; 
-  --border-color: #C0C0C0; 
+  --background: white;
+  --color: black;
   --border-width: 1px;
   --border-radius: 8px;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
+}
+
+ion-select {
+  --background: white;
+  --color: black;
+}
+
+ion-select-option {
+  --background: white;
+  --color: black;
+}
+
+/* Estilos para el modo oscuro */
+body.dark ion-item,
+body.dark ion-select {
+  --background: black;
+  --color: white;
+}
+
+body.dark ion-select-option {
+  --background: black;
+  --color: white;
 }
 
 ion-label {
-  color: #003DA5; 
+  color: #003DA5;
 }
 
 ion-input {
-  --background: #FFFFFF;
-  --color: #000000;
-  --placeholder-color: #A0A0A0; 
-  --highlight-color: #000000; 
-  color: #000000 !important; 
   width: 100%;
   max-width: 200px;
   margin: 0 auto;
   font-size: 14px;
 }
-
 
 .logo-container {
   text-align: center;
@@ -122,13 +126,26 @@ ion-button[fill="clear"] {
 .sticky-footer {
   position: sticky;
   bottom: 0;
-  background-color: #003DA5;
-  color: white;
   text-align: center;
 }
 
-  
-  
-  
-  
-  
+body {
+  background-color: white;
+  color: black;
+}
+
+body.dark {
+  background-color: black;
+  color: white;
+}
+
+/* Asegúrate de que otros elementos también cambien sus estilos */
+ion-header, ion-toolbar, ion-content, ion-footer, ion-select, ion-item, ion-label {
+  background-color: inherit;
+  color: inherit;
+}
+
+ion-button {
+  --background: inherit;
+  --color: inherit;
+}

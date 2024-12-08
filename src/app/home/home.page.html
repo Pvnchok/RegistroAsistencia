@@ -41,9 +41,12 @@
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title>Menu Principal</ion-title>
+      <ion-title style="color: var(--ion-text-color);">
+        Menu Principal
+      </ion-title>
+      
       <ion-buttons slot="end">
-        <ion-button (click)="toggleTheme()">
+        <ion-button (click)="toggleTheme()" style="--ion-color: var(--ion-text-color);">
           <ion-icon name="moon" slot="icon-only"></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -56,7 +59,7 @@
     </div>
     <div class="form-container">
       <ion-text>
-        <h1 style="color: #333333;">Bienvenido, {{ username }} :)</h1>
+        <h1 style="color: var(--ion-text-color);">Bienvenido, {{ username }} :)</h1>
       </ion-text>
     </div>
 
@@ -69,7 +72,7 @@
     </ion-label>
   </ion-segment-button>
 
-  <ion-segment-button value="generar" style="--color: #000000; --background: #F4A100;">
+  <ion-segment-button value="generar" style="--color: #000000; --background: #ffa600;">
     <ion-label style="display: flex; align-items: center; justify-content: center;">
       <img src="assets/img/tuerca.png" alt="icono" style="width: 20px; height: 20px;">
       <span style="white-space: nowrap;">Generar QR Asistencia</span>
@@ -98,9 +101,9 @@
     </ion-select>
   </ion-item>
   <ion-item>
-    <ion-label>Selecciona una sección</ion-label>
+    <ion-label>Selecciona una sección </ion-label>
     <ion-select [(ngModel)]="seccion" placeholder="Elige una sección">
-      <ion-select-option value="001D">001D</ion-select-option>
+      <ion-select-option style="--placeholder-color: red; --border-color: red; --highlight-color-focused: red;" value="001D">001D</ion-select-option>
       <ion-select-option value="002D">002D</ion-select-option>
       <ion-select-option value="003D">003D</ion-select-option>
       <ion-select-option value="004D">004D</ion-select-option>
