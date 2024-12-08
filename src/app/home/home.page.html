@@ -88,13 +88,13 @@
   <ion-item>
     <ion-label>Selecciona una asignatura</ion-label>
     <ion-select [(ngModel)]="asignatura" placeholder="Elige una asignatura">
-      <ion-select-option value="ASY4131">ASY4131</ion-select-option>
-      <ion-select-option value="CSY4111">CSY4111</ion-select-option>
-      <ion-select-option value="MAT4140">MAT4140</ion-select-option>
-      <ion-select-option value="EAY4450">EAY4450</ion-select-option>
-      <ion-select-option value="INI5111">INI5111</ion-select-option>
-      <ion-select-option value="APY4461">APY4461</ion-select-option>
-      <ion-select-option value="PGY4121">PGY4121</ion-select-option>
+      <ion-select-option value="ASY4131">Arquitectura</ion-select-option>
+      <ion-select-option value="CSY4111">Calidad de Software</ion-select-option>
+      <ion-select-option value="MAT4140">Estadisctica Descriptiva</ion-select-option>
+      <ion-select-option value="EAY4450">Etica para el trabajo</ion-select-option>
+      <ion-select-option value="INI5111">Ingles Intermedio</ion-select-option>
+      <ion-select-option value="APY4461">Proceso portafolio 4</ion-select-option>
+      <ion-select-option value="PGY4121">Programacion de aplicaciones moviles</ion-select-option>
     </ion-select>
   </ion-item>
   <ion-item>
@@ -154,6 +154,11 @@
       <ion-item *ngIf="result">
         {{ result }}
       </ion-item>
+      <h1>Asignatura: {{asignatura}}</h1>
+      <h1>Seccion: {{seccion}}</h1>
+      <h1>Sala: {{sala}}</h1>
+      <pre *ngIf="showFormattedDate" class="formatted-date">{{ getFormattedDate() }}</pre>
+
     </ion-list>
     <ion-grid>
       <ion-row>

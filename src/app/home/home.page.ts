@@ -7,6 +7,9 @@ import { HttpClient } from '@angular/common/http';
 import { CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint } from '@capacitor/barcode-scanner';
 import { Storage } from '@ionic/storage-angular'; 
 
+
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -27,6 +30,7 @@ export class HomePage implements OnInit {
   sala: string = '';
   fecha: string = '';
   locationErrorMessage: string = '';  // Mensaje de error de ubicación
+  showFormattedDate: boolean = false;
 
   // Coordenadas de referencia para la validación de distancia
   referencia = { lat: -33.499818, lon: -70.616237 }; // Cambia por las coordenadas correctas
@@ -144,8 +148,18 @@ export class HomePage implements OnInit {
     }
 
     console.log('Texto generado:', this.qrText);
+    this.showFormattedDate = true;
   }
 
+  getFormattedDate(): string {
+    const now = new Date();
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const year = now.getFullYear();
+    return `Año:${year}\nMes:${month}\nDía:${day}`;
+  }
+// return `Año:${year}\nMes:${month}\nDía:${day}`;
+// return `Día:${day}\nMes:${month}\nAño:${year}`;
   obtenerFechaSistema(): string {
     const fecha = new Date();
     const year = fecha.getFullYear();
@@ -153,6 +167,9 @@ export class HomePage implements OnInit {
     const day = String(fecha.getDate()).padStart(2, '0');
     
     return `${year}${month}${day}`;
+
+    
+
   }
 
   toggleTheme() {
@@ -171,4 +188,18 @@ export class HomePage implements OnInit {
       document.body.classList.toggle('dark', savedTheme === 'dark');
     }
   }
-}
+
+
+  
+
+    
+  }
+  
+
+  
+  
+  
+  
+
+
+
