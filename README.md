@@ -18,7 +18,3 @@ probar instalar estos
 npm install @capacitor-mlkit/barcode-scanning
 <br />
 npm install @capacitor/barcode-scanner
-<br />
-npm install @awesome-cordova-plugins/barcode-scanner
-<br />
-ionic cordova plugin add phonegap-plugin-barcodescanner
